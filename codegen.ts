@@ -15,7 +15,10 @@ const config: CodegenConfig = {
         skipTypename: true,
         avoidOptionals: true,
         onlyOperationTypes: true,
-      }
+      },
+      presetConfig: {
+        fragmentMasking: { unmaskFunctionName: 'getFragmentData' },
+      },
     },
     "./schema.graphql": {
       plugins: ["schema-ast"],
