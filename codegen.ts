@@ -4,6 +4,7 @@ import type { CodegenConfig } from '@graphql-codegen/cli';
 const config: CodegenConfig = {
   overwrite: true,
   schema: "https://graphql.org/graphql/",
+  ignoreNoDocuments: true,
   documents: "src/**/*.tsx",
   generates: {
     "src/gql/": {
@@ -13,8 +14,11 @@ const config: CodegenConfig = {
         useTypeImports: true,
       }
     },
-    "./graphql.schema.json": {
-      plugins: ["introspection"]
+    "./schema.graphql": {
+      plugins: ["schema-ast"],
+      config: {
+        includeDirectives: true
+      },
     }
   }
 };
