@@ -14,6 +14,7 @@ const config: CodegenConfig = {
         useTypeImports: true,
         skipTypename: true,
         avoidOptionals: true,
+        onlyOperationTypes: true,
       }
     },
     "./schema.graphql": {
