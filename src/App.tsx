@@ -8,11 +8,26 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { gql, GraphQLClient } from 'graphql-request'
+import { graphql } from './gql'
 
 const queryClient = new QueryClient()
+const graphqlClient = new GraphQLClient('https://graphql.org/graphql/')
 
-function Body() {
+const allFilemsDocument = graphql(`
+  query allFilms {
+    allFilms {
+      films {
+        id
+        title
+      }
+    }
+  }
+`)
+
+function Sample() {
   const [count, setCount] = useState(0)
+
   return (
     <div>
       <div>
@@ -28,13 +43,32 @@ function Body() {
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    </div>
+  )
+}
+
+function AllFilms() {
+  const { data } = useQuery({
+    queryKey: ['allFilms'],
+    queryFn: () => graphqlClient.request(allFilemsDocument),
+  })
+
+  return (
+    <div>
+      <h2>All Films</h2>
+      {data?.allFilms?.films?.map((film) => (
+        <div key={film?.id}>{film?.title}</div>
+      ))}
+    </div>
+  )
+}
+
+function Body() {
+  return (
+    <div>
+      <Sample />
+      <AllFilms />
     </div>
   )
 }
