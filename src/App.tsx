@@ -14,17 +14,6 @@ import { graphql } from './gql'
 const queryClient = new QueryClient()
 const graphqlClient = new GraphQLClient('https://graphql.org/graphql/')
 
-const allFilemsDocument = graphql(`
-  query allFilms {
-    allFilms {
-      films {
-        id
-        title
-      }
-    }
-  }
-`)
-
 function Sample() {
   const [count, setCount] = useState(0)
 
@@ -51,7 +40,16 @@ function Sample() {
 function AllFilms() {
   const { data } = useQuery({
     queryKey: ['allFilms'],
-    queryFn: () => graphqlClient.request(allFilemsDocument),
+    queryFn: () => graphqlClient.request(graphql(`
+      query allFilms {
+        allFilms {
+          films {
+            id
+            title
+          }
+        }
+      }
+    `)),
   })
 
   return (
