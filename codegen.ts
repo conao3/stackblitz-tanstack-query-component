@@ -12,6 +12,7 @@ const config: CodegenConfig = {
       plugins: [],
       config: {
         useTypeImports: true,
+        skipTypename: true,
         avoidOptionals: true,
       }
     },

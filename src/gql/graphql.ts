@@ -18,7 +18,6 @@ export type Scalars = {
 
 /** A single film. */
 export type Film = Node & {
-  __typename?: 'Film';
   characterConnection: Maybe<FilmCharactersConnection>;
   /** The ISO 8601 date format of the time that this resource was created. */
   created: Maybe<Scalars['String']['output']>;
@@ -91,7 +90,6 @@ export type FilmVehicleConnectionArgs = {
 
 /** A connection to a list of items. */
 export type FilmCharactersConnection = {
-  __typename?: 'FilmCharactersConnection';
   /**
    * A list of all of the objects returned in the connection. This is a convenience
    * field provided for quickly exploring the API; rather than querying for
@@ -116,7 +114,6 @@ export type FilmCharactersConnection = {
 
 /** An edge in a connection. */
 export type FilmCharactersEdge = {
-  __typename?: 'FilmCharactersEdge';
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
   /** The item at the end of the edge */
@@ -125,7 +122,6 @@ export type FilmCharactersEdge = {
 
 /** A connection to a list of items. */
 export type FilmPlanetsConnection = {
-  __typename?: 'FilmPlanetsConnection';
   /** A list of edges. */
   edges: Maybe<Array<Maybe<FilmPlanetsEdge>>>;
   /** Information to aid in pagination. */
@@ -150,7 +146,6 @@ export type FilmPlanetsConnection = {
 
 /** An edge in a connection. */
 export type FilmPlanetsEdge = {
-  __typename?: 'FilmPlanetsEdge';
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
   /** The item at the end of the edge */
@@ -159,7 +154,6 @@ export type FilmPlanetsEdge = {
 
 /** A connection to a list of items. */
 export type FilmSpeciesConnection = {
-  __typename?: 'FilmSpeciesConnection';
   /** A list of edges. */
   edges: Maybe<Array<Maybe<FilmSpeciesEdge>>>;
   /** Information to aid in pagination. */
@@ -184,7 +178,6 @@ export type FilmSpeciesConnection = {
 
 /** An edge in a connection. */
 export type FilmSpeciesEdge = {
-  __typename?: 'FilmSpeciesEdge';
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
   /** The item at the end of the edge */
@@ -193,7 +186,6 @@ export type FilmSpeciesEdge = {
 
 /** A connection to a list of items. */
 export type FilmStarshipsConnection = {
-  __typename?: 'FilmStarshipsConnection';
   /** A list of edges. */
   edges: Maybe<Array<Maybe<FilmStarshipsEdge>>>;
   /** Information to aid in pagination. */
@@ -218,7 +210,6 @@ export type FilmStarshipsConnection = {
 
 /** An edge in a connection. */
 export type FilmStarshipsEdge = {
-  __typename?: 'FilmStarshipsEdge';
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
   /** The item at the end of the edge */
@@ -227,7 +218,6 @@ export type FilmStarshipsEdge = {
 
 /** A connection to a list of items. */
 export type FilmVehiclesConnection = {
-  __typename?: 'FilmVehiclesConnection';
   /** A list of edges. */
   edges: Maybe<Array<Maybe<FilmVehiclesEdge>>>;
   /** Information to aid in pagination. */
@@ -252,7 +242,6 @@ export type FilmVehiclesConnection = {
 
 /** An edge in a connection. */
 export type FilmVehiclesEdge = {
-  __typename?: 'FilmVehiclesEdge';
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
   /** The item at the end of the edge */
@@ -261,7 +250,6 @@ export type FilmVehiclesEdge = {
 
 /** A connection to a list of items. */
 export type FilmsConnection = {
-  __typename?: 'FilmsConnection';
   /** A list of edges. */
   edges: Maybe<Array<Maybe<FilmsEdge>>>;
   /**
@@ -286,7 +274,6 @@ export type FilmsConnection = {
 
 /** An edge in a connection. */
 export type FilmsEdge = {
-  __typename?: 'FilmsEdge';
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
   /** The item at the end of the edge */
@@ -301,7 +288,6 @@ export type Node = {
 
 /** Information about pagination in a connection. */
 export type PageInfo = {
-  __typename?: 'PageInfo';
   /** When paginating forwards, the cursor to continue. */
   endCursor: Maybe<Scalars['String']['output']>;
   /** When paginating forwards, are there more items? */
@@ -314,7 +300,6 @@ export type PageInfo = {
 
 /** A connection to a list of items. */
 export type PeopleConnection = {
-  __typename?: 'PeopleConnection';
   /** A list of edges. */
   edges: Maybe<Array<Maybe<PeopleEdge>>>;
   /** Information to aid in pagination. */
@@ -339,7 +324,6 @@ export type PeopleConnection = {
 
 /** An edge in a connection. */
 export type PeopleEdge = {
-  __typename?: 'PeopleEdge';
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
   /** The item at the end of the edge */
@@ -348,7 +332,6 @@ export type PeopleEdge = {
 
 /** An individual person or character within the Star Wars universe. */
 export type Person = Node & {
-  __typename?: 'Person';
   /**
    * The birth year of the person, using the in-universe standard of BBY or ABY -
    * Before the Battle of Yavin or After the Battle of Yavin. The Battle of Yavin is
@@ -422,7 +405,6 @@ export type PersonVehicleConnectionArgs = {
 
 /** A connection to a list of items. */
 export type PersonFilmsConnection = {
-  __typename?: 'PersonFilmsConnection';
   /** A list of edges. */
   edges: Maybe<Array<Maybe<PersonFilmsEdge>>>;
   /**
@@ -447,7 +429,6 @@ export type PersonFilmsConnection = {
 
 /** An edge in a connection. */
 export type PersonFilmsEdge = {
-  __typename?: 'PersonFilmsEdge';
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
   /** The item at the end of the edge */
@@ -456,7 +437,6 @@ export type PersonFilmsEdge = {
 
 /** A connection to a list of items. */
 export type PersonStarshipsConnection = {
-  __typename?: 'PersonStarshipsConnection';
   /** A list of edges. */
   edges: Maybe<Array<Maybe<PersonStarshipsEdge>>>;
   /** Information to aid in pagination. */
@@ -481,7 +461,6 @@ export type PersonStarshipsConnection = {
 
 /** An edge in a connection. */
 export type PersonStarshipsEdge = {
-  __typename?: 'PersonStarshipsEdge';
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
   /** The item at the end of the edge */
@@ -490,7 +469,6 @@ export type PersonStarshipsEdge = {
 
 /** A connection to a list of items. */
 export type PersonVehiclesConnection = {
-  __typename?: 'PersonVehiclesConnection';
   /** A list of edges. */
   edges: Maybe<Array<Maybe<PersonVehiclesEdge>>>;
   /** Information to aid in pagination. */
@@ -515,7 +493,6 @@ export type PersonVehiclesConnection = {
 
 /** An edge in a connection. */
 export type PersonVehiclesEdge = {
-  __typename?: 'PersonVehiclesEdge';
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
   /** The item at the end of the edge */
@@ -527,7 +504,6 @@ export type PersonVehiclesEdge = {
  * 0 ABY.
  */
 export type Planet = Node & {
-  __typename?: 'Planet';
   /** The climates of this planet. */
   climates: Maybe<Array<Maybe<Scalars['String']['output']>>>;
   /** The ISO 8601 date format of the time that this resource was created. */
@@ -594,7 +570,6 @@ export type PlanetResidentConnectionArgs = {
 
 /** A connection to a list of items. */
 export type PlanetFilmsConnection = {
-  __typename?: 'PlanetFilmsConnection';
   /** A list of edges. */
   edges: Maybe<Array<Maybe<PlanetFilmsEdge>>>;
   /**
@@ -619,7 +594,6 @@ export type PlanetFilmsConnection = {
 
 /** An edge in a connection. */
 export type PlanetFilmsEdge = {
-  __typename?: 'PlanetFilmsEdge';
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
   /** The item at the end of the edge */
@@ -628,7 +602,6 @@ export type PlanetFilmsEdge = {
 
 /** A connection to a list of items. */
 export type PlanetResidentsConnection = {
-  __typename?: 'PlanetResidentsConnection';
   /** A list of edges. */
   edges: Maybe<Array<Maybe<PlanetResidentsEdge>>>;
   /** Information to aid in pagination. */
@@ -653,7 +626,6 @@ export type PlanetResidentsConnection = {
 
 /** An edge in a connection. */
 export type PlanetResidentsEdge = {
-  __typename?: 'PlanetResidentsEdge';
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
   /** The item at the end of the edge */
@@ -662,7 +634,6 @@ export type PlanetResidentsEdge = {
 
 /** A connection to a list of items. */
 export type PlanetsConnection = {
-  __typename?: 'PlanetsConnection';
   /** A list of edges. */
   edges: Maybe<Array<Maybe<PlanetsEdge>>>;
   /** Information to aid in pagination. */
@@ -687,7 +658,6 @@ export type PlanetsConnection = {
 
 /** An edge in a connection. */
 export type PlanetsEdge = {
-  __typename?: 'PlanetsEdge';
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
   /** The item at the end of the edge */
@@ -695,7 +665,6 @@ export type PlanetsEdge = {
 };
 
 export type Root = {
-  __typename?: 'Root';
   allFilms: Maybe<FilmsConnection>;
   allPeople: Maybe<PeopleConnection>;
   allPlanets: Maybe<PlanetsConnection>;
@@ -803,7 +772,6 @@ export type RootVehicleArgs = {
 
 /** A type of person or character within the Star Wars Universe. */
 export type Species = Node & {
-  __typename?: 'Species';
   /** The average height of this species in centimeters. */
   averageHeight: Maybe<Scalars['Float']['output']>;
   /** The average lifespan of this species in years, null if unknown. */
@@ -863,7 +831,6 @@ export type SpeciesPersonConnectionArgs = {
 
 /** A connection to a list of items. */
 export type SpeciesConnection = {
-  __typename?: 'SpeciesConnection';
   /** A list of edges. */
   edges: Maybe<Array<Maybe<SpeciesEdge>>>;
   /** Information to aid in pagination. */
@@ -888,7 +855,6 @@ export type SpeciesConnection = {
 
 /** An edge in a connection. */
 export type SpeciesEdge = {
-  __typename?: 'SpeciesEdge';
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
   /** The item at the end of the edge */
@@ -897,7 +863,6 @@ export type SpeciesEdge = {
 
 /** A connection to a list of items. */
 export type SpeciesFilmsConnection = {
-  __typename?: 'SpeciesFilmsConnection';
   /** A list of edges. */
   edges: Maybe<Array<Maybe<SpeciesFilmsEdge>>>;
   /**
@@ -922,7 +887,6 @@ export type SpeciesFilmsConnection = {
 
 /** An edge in a connection. */
 export type SpeciesFilmsEdge = {
-  __typename?: 'SpeciesFilmsEdge';
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
   /** The item at the end of the edge */
@@ -931,7 +895,6 @@ export type SpeciesFilmsEdge = {
 
 /** A connection to a list of items. */
 export type SpeciesPeopleConnection = {
-  __typename?: 'SpeciesPeopleConnection';
   /** A list of edges. */
   edges: Maybe<Array<Maybe<SpeciesPeopleEdge>>>;
   /** Information to aid in pagination. */
@@ -956,7 +919,6 @@ export type SpeciesPeopleConnection = {
 
 /** An edge in a connection. */
 export type SpeciesPeopleEdge = {
-  __typename?: 'SpeciesPeopleEdge';
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
   /** The item at the end of the edge */
@@ -965,7 +927,6 @@ export type SpeciesPeopleEdge = {
 
 /** A single transport craft that has hyperdrive capability. */
 export type Starship = Node & {
-  __typename?: 'Starship';
   /**
    * The Maximum number of Megalights this starship can travel in a standard hour.
    * A "Megalight" is a standard unit of distance and has never been defined before
@@ -1040,7 +1001,6 @@ export type StarshipPilotConnectionArgs = {
 
 /** A connection to a list of items. */
 export type StarshipFilmsConnection = {
-  __typename?: 'StarshipFilmsConnection';
   /** A list of edges. */
   edges: Maybe<Array<Maybe<StarshipFilmsEdge>>>;
   /**
@@ -1065,7 +1025,6 @@ export type StarshipFilmsConnection = {
 
 /** An edge in a connection. */
 export type StarshipFilmsEdge = {
-  __typename?: 'StarshipFilmsEdge';
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
   /** The item at the end of the edge */
@@ -1074,7 +1033,6 @@ export type StarshipFilmsEdge = {
 
 /** A connection to a list of items. */
 export type StarshipPilotsConnection = {
-  __typename?: 'StarshipPilotsConnection';
   /** A list of edges. */
   edges: Maybe<Array<Maybe<StarshipPilotsEdge>>>;
   /** Information to aid in pagination. */
@@ -1099,7 +1057,6 @@ export type StarshipPilotsConnection = {
 
 /** An edge in a connection. */
 export type StarshipPilotsEdge = {
-  __typename?: 'StarshipPilotsEdge';
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
   /** The item at the end of the edge */
@@ -1108,7 +1065,6 @@ export type StarshipPilotsEdge = {
 
 /** A connection to a list of items. */
 export type StarshipsConnection = {
-  __typename?: 'StarshipsConnection';
   /** A list of edges. */
   edges: Maybe<Array<Maybe<StarshipsEdge>>>;
   /** Information to aid in pagination. */
@@ -1133,7 +1089,6 @@ export type StarshipsConnection = {
 
 /** An edge in a connection. */
 export type StarshipsEdge = {
-  __typename?: 'StarshipsEdge';
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
   /** The item at the end of the edge */
@@ -1142,7 +1097,6 @@ export type StarshipsEdge = {
 
 /** A single transport craft that does not have hyperdrive capability */
 export type Vehicle = Node & {
-  __typename?: 'Vehicle';
   /** The maximum number of kilograms that this vehicle can transport. */
   cargoCapacity: Maybe<Scalars['Float']['output']>;
   /**
@@ -1204,7 +1158,6 @@ export type VehiclePilotConnectionArgs = {
 
 /** A connection to a list of items. */
 export type VehicleFilmsConnection = {
-  __typename?: 'VehicleFilmsConnection';
   /** A list of edges. */
   edges: Maybe<Array<Maybe<VehicleFilmsEdge>>>;
   /**
@@ -1229,7 +1182,6 @@ export type VehicleFilmsConnection = {
 
 /** An edge in a connection. */
 export type VehicleFilmsEdge = {
-  __typename?: 'VehicleFilmsEdge';
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
   /** The item at the end of the edge */
@@ -1238,7 +1190,6 @@ export type VehicleFilmsEdge = {
 
 /** A connection to a list of items. */
 export type VehiclePilotsConnection = {
-  __typename?: 'VehiclePilotsConnection';
   /** A list of edges. */
   edges: Maybe<Array<Maybe<VehiclePilotsEdge>>>;
   /** Information to aid in pagination. */
@@ -1263,7 +1214,6 @@ export type VehiclePilotsConnection = {
 
 /** An edge in a connection. */
 export type VehiclePilotsEdge = {
-  __typename?: 'VehiclePilotsEdge';
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
   /** The item at the end of the edge */
@@ -1272,7 +1222,6 @@ export type VehiclePilotsEdge = {
 
 /** A connection to a list of items. */
 export type VehiclesConnection = {
-  __typename?: 'VehiclesConnection';
   /** A list of edges. */
   edges: Maybe<Array<Maybe<VehiclesEdge>>>;
   /** Information to aid in pagination. */
@@ -1297,7 +1246,6 @@ export type VehiclesConnection = {
 
 /** An edge in a connection. */
 export type VehiclesEdge = {
-  __typename?: 'VehiclesEdge';
   /** A cursor for use in pagination */
   cursor: Scalars['String']['output'];
   /** The item at the end of the edge */
@@ -1307,7 +1255,7 @@ export type VehiclesEdge = {
 export type AllFilmsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type AllFilmsQuery = { __typename?: 'Root', allFilms: { __typename?: 'FilmsConnection', films: Array<{ __typename?: 'Film', id: string, title: string | null } | null> | null } | null };
+export type AllFilmsQuery = { allFilms: { films: Array<{ id: string, title: string | null } | null> | null } | null };
 
 
 export const AllFilmsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"allFilms"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"allFilms"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"films"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}}]}}]}}]} as unknown as DocumentNode<AllFilmsQuery, AllFilmsQueryVariables>;
