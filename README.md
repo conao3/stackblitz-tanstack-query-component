@@ -1,3 +1,18 @@
+# stackblitz-tanstack-query-component
+
+This is POC repository using this stack.
+
+- React
+- Tanstack query
+- GraphQL
+
+The goal of this repository is to examine how to configure reusable components.
+To make components truly reusable, they are permitted to independently fetch only the data they need.
+However, this approach contradicts GraphQL's principle of bulk fetching, and we must reconcile these differing concepts.
+
+The solution here involves passing only the necessary subset of data as props from the parent component to its child components, at which point the child components act as control components.
+Our sample implementation demonstrates how this solution can be practically achieved.
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
