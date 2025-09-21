@@ -1,5 +1,4 @@
-
-import type { CodegenConfig } from '@graphql-codegen/cli';
+import type { CodegenConfig } from "@graphql-codegen/cli";
 
 const config: CodegenConfig = {
   overwrite: true,
@@ -17,16 +16,16 @@ const config: CodegenConfig = {
         onlyOperationTypes: true,
       },
       presetConfig: {
-        fragmentMasking: { unmaskFunctionName: 'getFragmentData' },
+        fragmentMasking: { unmaskFunctionName: "getFragmentData" },
       },
     },
     "./schema.graphql": {
       plugins: ["schema-ast"],
       config: {
-        includeDirectives: true
+        includeDirectives: true,
       },
-    }
-  }
+    },
+  },
 };
 
 export default config;
