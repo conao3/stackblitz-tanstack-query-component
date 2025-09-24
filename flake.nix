@@ -7,32 +7,36 @@
     treefmt-nix.url = "github:numtide/treefmt-nix";
   };
 
-  outputs = inputs @ {flake-parts, ...}:
-    flake-parts.lib.mkFlake {inherit inputs;} {
-      systems = ["x86_64-linux" "aarch64-darwin"];
+  outputs =
+    inputs@{ flake-parts, ... }:
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = [
+        "x86_64-linux"
+        "aarch64-darwin"
+      ];
 
       imports = [
         inputs.treefmt-nix.flakeModule
       ];
 
-      perSystem = {
-        pkgs,
-        ...
-      }: {
-        treefmt = {
-          projectRootFile = "flake.nix";
-          programs = {
-            nixfmt.enable = true;
-            biome.enable = true;
+      perSystem =
+        {
+          pkgs,
+          ...
+        }:
+        {
+          treefmt = {
+            programs = {
+              nixfmt.enable = true;
+            };
+          };
+
+          devShells.default = pkgs.mkShell {
+            packages = with pkgs; [
+              nodejs_22
+              biome
+            ];
           };
         };
-
-        devShells.default = pkgs.mkShell {
-          packages = with pkgs; [
-            nodejs_22
-            biome
-          ];
-        };
-      };
     };
 }
