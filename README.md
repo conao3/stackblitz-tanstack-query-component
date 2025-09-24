@@ -13,6 +13,14 @@ However, this approach contradicts GraphQL's principle of bulk fetching, and we 
 The solution here involves passing only the necessary subset of data as props from the parent component to its child components, at which point the child components act as control components.
 Our sample implementation demonstrates how this solution can be practically achieved.
 
+---
+
+Status: On going
+
+The above outlines the goal we should aim for, but we're not yet there.
+Actually, using normalized caching with `urql` might be the better approach.
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
