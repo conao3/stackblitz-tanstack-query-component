@@ -1,92 +1,47 @@
 # stackblitz-tanstack-query-component
 
-This is POC repository using this stack.
+A proof-of-concept repository exploring component architecture patterns with React, TanStack Query, and GraphQL.
 
-- React
-- Tanstack query
-- GraphQL
+## Overview
 
-The goal of this repository is to examine how to configure reusable components.
-To make components truly reusable, they are permitted to independently fetch only the data they need.
-However, this approach contradicts GraphQL's principle of bulk fetching, and we must reconcile these differing concepts.
+This project investigates how to build truly reusable components that can independently manage their own data requirements while maintaining GraphQL's efficiency benefits.
 
-The solution here involves passing only the necessary subset of data as props from the parent component to its child components, at which point the child components act as control components.
-Our sample implementation demonstrates how this solution can be practically achieved.
+### The Challenge
 
----
+Building reusable components often means allowing each component to fetch only the data it needs. However, this approach conflicts with GraphQL's fundamental principle of batching queries to minimize network requests. This project explores ways to reconcile these two patterns.
 
-Status: On going
+### The Approach
 
-The above outlines the goal we should aim for, but we're not yet there.
-Actually, using normalized caching with `urql` might be the better approach.
+The solution involves passing carefully scoped data subsets as props from parent components to children, where child components serve as controlled components. The implementation demonstrates practical patterns for achieving this architecture.
 
+## Tech Stack
 
-# React + TypeScript + Vite
+- React 19
+- TanStack Query
+- GraphQL with graphql-request
+- TypeScript
+- Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Getting Started
 
-Currently, two official plugins are available:
+```bash
+# Install dependencies
+npm install
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Start development server
+npm run dev
 
-## Expanding the ESLint configuration
+# Build for production
+npm run build
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Generate GraphQL types
+npm run graphql:codegen
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Status
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+This project is a work in progress. The patterns described above represent the target architecture, but the implementation is still evolving. An alternative approach using normalized caching with urql is also under consideration.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## License
+
+MIT
