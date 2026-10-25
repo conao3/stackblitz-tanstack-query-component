@@ -1,7 +1,6 @@
 /* eslint-disable */
-
-import type { TypedDocumentNode as DocumentNode } from "@graphql-typed-document-node/core";
-import * as types from "./graphql";
+import * as types from './graphql';
+import type { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/core';
 
 /**
  * Map of all GraphQL operations in the project.
@@ -15,11 +14,10 @@ import * as types from "./graphql";
  * Learn more about it here: https://the-guild.dev/graphql/codegen/plugins/presets/preset-client#reducing-bundle-size
  */
 type Documents = {
-  "\n      query allFilms {\n        allFilms {\n          films {\n            id\n            title\n          }\n        }\n      }\n    ": typeof types.AllFilmsDocument;
+    "\n      query allFilms {\n        allFilms {\n          films {\n            id\n            title\n          }\n        }\n      }\n    ": typeof types.AllFilmsDocument,
 };
 const documents: Documents = {
-  "\n      query allFilms {\n        allFilms {\n          films {\n            id\n            title\n          }\n        }\n      }\n    ":
-    types.AllFilmsDocument,
+    "\n      query allFilms {\n        allFilms {\n          films {\n            id\n            title\n          }\n        }\n      }\n    ": types.AllFilmsDocument,
 };
 
 /**
@@ -39,13 +37,10 @@ export function graphql(source: string): unknown;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(
-  source: "\n      query allFilms {\n        allFilms {\n          films {\n            id\n            title\n          }\n        }\n      }\n    ",
-): (typeof documents)["\n      query allFilms {\n        allFilms {\n          films {\n            id\n            title\n          }\n        }\n      }\n    "];
+export function graphql(source: "\n      query allFilms {\n        allFilms {\n          films {\n            id\n            title\n          }\n        }\n      }\n    "): (typeof documents)["\n      query allFilms {\n        allFilms {\n          films {\n            id\n            title\n          }\n        }\n      }\n    "];
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {};
 }
 
-export type DocumentType<TDocumentNode extends DocumentNode<any, any>> =
-  TDocumentNode extends DocumentNode<infer TType, any> ? TType : never;
+export type DocumentType<TDocumentNode extends DocumentNode<any, any>> = TDocumentNode extends DocumentNode<  infer TType,  any>  ? TType  : never;
